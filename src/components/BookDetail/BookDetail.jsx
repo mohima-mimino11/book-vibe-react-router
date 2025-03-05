@@ -1,17 +1,40 @@
 import { useLoaderData, useParams } from "react-router-dom";
+import { addToReadList, addToWishList } from "../../utility/addToDB";
 
 
 const BookDetail = () => {
 
   const books = useLoaderData();
-
-  
   const {bookId} = useParams();
   const id = parseInt(bookId)
-  console.log(bookId);
+  // console.log(bookId);
   const book = books.find(book => book.bookId === id)
-  console.log(book);
+  // console.log(book);
   const {bookId: currentId, bookName,author, image,review,totalPages, rating, category,tags,publisher, yearOfPublishing} = book;
+
+  const handleMarkAsRead = (id) =>{
+      /**
+       * 1. understand what to store or save: => bookId
+       * 2. where to store: database
+       * 3. array, list or collection
+       * 4. check: if book is already in the read-list 
+       * 5. if not, then add the book to read-list
+       * 6. if yes, don't add anything
+       */
+      addToReadList(id);
+  }
+
+  const handleWishList = (id) =>{
+    /**
+    * 1. understand what to store or save: => bookId
+    * 2. where to store: database
+    * 3. array, list or collection
+    * 4. check: if book is already in the read-list 
+    * 5. if not, then add the book to read-list
+    * 6. if yes, don't add anything
+    */
+   addToWishList(id)
+  }
   return (
     <div className="hero bg-white min-h-screen">
     <div className="hero-content flex-col lg:flex-row gap-8">
@@ -45,8 +68,8 @@ const BookDetail = () => {
 
         </div>
         <div className="space-x-4">
-          <button className="btn btn-outline px-7 py-5 rounded-lg">Read</button>
-          <button className="btn btn-info px-7 py-5 rounded-lg text-white">Wishlist</button>
+          <button onClick={() => handleMarkAsRead(currentId)} className="btn btn-outline px-7 py-5 rounded-lg work-sans text-lg font-semibold">Read</button>
+          <button onClick={() => handleWishList(currentId)} className="btn bg-[#59C6D2] px-7 py-5 rounded-lg text-white work-sans text-lg font-semibold">Wishlist</button>
 
         </div>
       </div>
