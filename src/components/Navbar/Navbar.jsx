@@ -4,8 +4,8 @@ import './Navbar.css'
 const Navbar = () => {
   const links = <>
       <li><NavLink to="/">Home</NavLink></li>
-      {/* <li><NavLink to="">Listed Books</NavLink></li> */}
-      <li><NavLink to="/dashboard">Pages To Read</NavLink></li>
+      <li><NavLink to="listedbooks">Listed Books</NavLink></li>
+      <li><NavLink to="dashboard">Pages To Read</NavLink></li>
 
   </>
   
