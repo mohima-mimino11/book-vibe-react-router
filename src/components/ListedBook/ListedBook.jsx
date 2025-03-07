@@ -1,7 +1,7 @@
 
 
 const ListedBook = ({readbook}) => {
-  const {bookId, bookName,author, image,review,totalPages, rating, category,tags,publisher, yearOfPublishing} = readbook;
+  const {bookId, bookName,author, image,totalPages, rating, category,tags,publisher, yearOfPublishing} = readbook;
   return (
     <div className="p-6 flex gap-6 bg-white">
      <div className="w-[230px] h-[230px] bg-gray-600 rounded-2xl">
