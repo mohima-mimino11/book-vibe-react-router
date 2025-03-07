@@ -24,7 +24,9 @@ const ListedBook = ({readbook}) => {
           <p className="work-sans text-base text-gray-400">Pages: {totalPages}</p>
         </div>
         <div className="flex gap-4">
-          <button className="btn work-sans text-base rounded-[30px] bg-[#26328EFF] text-[#328EFF]">Category: {category}</button>
+          <button className="btn work-sans text-base rounded-[30px] bg-[#328EFF26] text-[#328EFF]">Category: {category}</button>
+          <button className="btn work-sans text-base rounded-[30px] bg-[#FFAC3326] text-[#FFAC33]">Rating: {rating}</button>
+          <button className="btn work-sans text-base rounded-[30px] bg-[#23BE0A] text-white">View Details</button>
         </div>
      </div>
     </div>
