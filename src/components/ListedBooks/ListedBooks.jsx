@@ -5,6 +5,7 @@ import 'react-tabs/style/react-tabs.css';
 import { getStoredReadList } from '../../utility/addToDB';
 import ListedBook from '../ListedBook/ListedBook';
 import Book from '../Book/Book';
+import { Helmet } from 'react-helmet-async';
 
 const ListedBooks = () => {
   const [readBooks, setReadBooks] = useState([]);
@@ -21,6 +22,9 @@ const ListedBooks = () => {
   },[])
   return (
     <div>
+      <Helmet>
+        <title>Listed Books</title>
+      </Helmet>
       <div className="bg-gray-500 w-full h-24">
         <h3 className="work-sans text-3xl font-bold text-center py-8">Books</h3>
       </div>

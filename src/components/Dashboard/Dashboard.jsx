@@ -1,3 +1,4 @@
+import { Helmet } from "react-helmet-async";
 import { useLoaderData } from "react-router-dom";
 import { BarChart, Bar, Cell, XAxis, YAxis, CartesianGrid } from 'recharts';
 
@@ -20,7 +21,9 @@ const Dashboard = () => {
   };
   return (
     <div>
-      
+      <Helmet>
+        <title>Dashboard</title>
+      </Helmet>
       <BarChart
       width={1170}
       height={756}
